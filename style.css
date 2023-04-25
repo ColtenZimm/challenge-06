@@ -3,3 +3,8 @@ body {
   
     .weatherDiv {
         text-align: center; }
+
+        img.defaultWeather {
+            display: block;
+            margin-left: auto;
+            margin-right: auto; }
