@@ -12,3 +12,33 @@ requirejs.config({
         'bootstrap': ['jquery']
     }
 });
+
+requirejs(
+
+    ["jquery", "hbs", "bootstrap", "templates", "userAuth", "q", "firebase", "getWeather", "zipCheck"],
+    function($, Handlebars, bootstrap, templates, userAuth, q, firebase, getWeather, zipCheck) {
+
+  $("#login").html(templates.login);
+
+  $(document).on("click", "#registerPage", function(e) {
+    e.preventDefault();
+    $("#login").html(templates.register);
+  });
+
+  $(document).on("click", "#loginPage", function(e) {
+    e.preventDefault();
+    $("#login").html(templates.login);
+  });
+
+  $(document).on("click", "#submitRegister", function(e){
+    e.preventDefault();
+    userAuth.register();
+    $("#login").html(templates.login);
+  });
+
+  $(document).on("click", "#submitLogin", function(e){
+    e.preventDefault();
+    userAuth.logIn();
+    $("#login").hide();
+    $("#initialNav").html(templates.zipcode);
+  });
