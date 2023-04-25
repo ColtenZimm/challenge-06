@@ -42,3 +42,24 @@ requirejs(
     $("#login").hide();
     $("#initialNav").html(templates.zipcode);
   });
+
+  $(document).on("click", "#searchButton", function(e){
+    e.preventDefault();
+
+    zipCheck.zipCheck()
+      .then(function(zip){
+        getWeather.initialSearch()
+          .then(function(day){
+            $("#weather1").html(templates.weather1(day));
+          });
+      });
+  });
+
+  $(document).on("click", "#logOut", function(e){
+    e.preventDefault();
+    userAuth.logOut();
+    // First Hide all App Divs
+    $("#login").html(templates.login);
+  });
+
+});
