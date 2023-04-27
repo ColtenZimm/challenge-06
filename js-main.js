@@ -1,4 +1,4 @@
-requirejs({
+requirejs.config({
   baseUrl: './javascripts',
   paths: {
       'jquery': '../lib/bower_components/jquery/dist/jquery.min',
@@ -14,9 +14,7 @@ requirejs({
 });
 
 
-function requirejs() {
-
-    ["jquery", "hbs", "bootstrap", "templates", "userAuth", "q", "firebase", "getWeather", "zipCheck"],
+requirejs(["jquery", "hbs", "bootstrap", "templates", "userAuth", "q", "firebase", "getWeather", "zipCheck"],
     function($, Handlebars, bootstrap, templates, userAuth, q, firebase, getWeather, zipCheck) {
 
   $("#login").html(templates.login);
@@ -62,4 +60,4 @@ function requirejs() {
     $("#login").html(templates.login);
   });
 
-}};
+});
