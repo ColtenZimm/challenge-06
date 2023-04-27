@@ -1,19 +1,19 @@
-requirejs.config({
-    baseUrl: './javascripts',
-    paths: {
-        'jquery': '../lib/bower_components/jquery/dist/jquery.min',
-        'lodash': '../lib/bower_components/lodash/lodash.min',
-        'hbs': '../lib/bower_components/require-handlebars-plugin/hbs',
-        'bootstrap': '../lib/bower_components/bootstrap/dist/js/bootstrap.min',
-        'firebase': '../lib/bower_components/firebase/firebase',
-        'q': '../lib/bower_components/q/q'
-    },
-    shim: {
-        'bootstrap': ['jquery']
-    }
-});
+// requirejs.config({
+//     baseUrl: './javascripts',
+//     paths: {
+//         'jquery': '../lib/bower_components/jquery/dist/jquery.min',
+//         'lodash': '../lib/bower_components/lodash/lodash.min',
+//         'hbs': '../lib/bower_components/require-handlebars-plugin/hbs',
+//         'bootstrap': '../lib/bower_components/bootstrap/dist/js/bootstrap.min',
+//         'firebase': '../lib/bower_components/firebase/firebase',
+//         'q': '../lib/bower_components/q/q'
+//     },
+//     shim: {
+//         'bootstrap': ['jquery']
+//     }
+// });
 
-requirejs(
+function requirejs() {
 
     ["jquery", "hbs", "bootstrap", "templates", "userAuth", "q", "firebase", "getWeather", "zipCheck"],
     function($, Handlebars, bootstrap, templates, userAuth, q, firebase, getWeather, zipCheck) {
@@ -62,4 +62,4 @@ requirejs(
     $("#login").html(templates.login);
   });
 
-});
+}};
