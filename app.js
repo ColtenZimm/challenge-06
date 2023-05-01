@@ -9,7 +9,8 @@ form.addEventListener('submit', (event) => {
   const apiKey = '19d898a9280e66dbe17ab3e90156196a';
   
   // Fetch weather data from OpenWeatherMap API
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${3ea468f4a2b9f36779b8a9e065b68283})
+
     .then(response => response.json())
     .then(data => {
       // Display weather data on the page
