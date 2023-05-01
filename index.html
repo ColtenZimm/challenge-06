@@ -8,26 +8,16 @@
     <title>Weather Checker!</title>
 </head>
 <body>
-    <div id="login"></div>
-
-    <div id="initialNav"></div>
-
-    <div id="appNav"></div>
-
-    <div id="weather1"></div>
-    <div id="weather3"></div>
-    <div id="weather5"></div>
-    <div id="weatherSaved">
-    </div>
+    <form>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+      <label for="country">Country Code:</label>
+      <input type="text" id="country" name="country" required>
+      <button type="submit">Get Weather</button>
+    </form>
     
+    <div id="weather-data"></div>
     
-    <script type="module" src="js-main.js"></script>
-    <script type="module" src="js"></script>
-    
-</body>
-<footer>
-    <script src="require.js"></script>
-    <script src="js"></script>
-    <script src="js-main.js"></script>
-</footer>
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -6,7 +6,7 @@ form.addEventListener('submit', (event) => {
   
   const city = document.querySelector('#city').value;
   const country = document.querySelector('#country').value;
-  const apiKey = 'YOUR_API_KEY_HERE';
+  const apiKey = '19d898a9280e66dbe17ab3e90156196a';
   
   // Fetch weather data from OpenWeatherMap API
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`)
