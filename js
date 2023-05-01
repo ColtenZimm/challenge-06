@@ -1,25 +1,23 @@
-define(["jquery", "q"], function($, Q) {
 
-    var ref = new Firebase("https://bl-weather-app.firebaseio.com/");
+
+function weatherApp() {
+
+  var apiKey = "87698b85f315acbeb3085f389d2fb89b";
 
   return {
-    initialSearch: function(){
-
-      var deferred = Q.defer();
-      var zipCode = $("#searchZip").val();
-      var searchString = "http://api.openweathermap.org/data/2.5/weather?zip="+zipCode+",us&APPID=87698b85f315acbeb3085f389d2fb89b";
-
-      $.ajax({url:searchString})
+    searchWeather: function(zipCode) {
+      var deferred = $.Deferred();
+      var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + ",us&APPID=" + apiKey;
+      $.ajax({url: url})
         .done(function(json_data){
           console.log(json_data);
           deferred.resolve(json_data);
         }).fail(function(xhr,status,error){
-          console.log("error");
+          console.log("Error: " + error);
           deferred.reject(error);
         });
-      return deferred.promise;
+      return deferred.promise();
     }
-
   };
-});
+}
 
