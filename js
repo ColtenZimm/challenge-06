@@ -1,6 +1,6 @@
 define(["jquery", "q"], function($, Q) {
 
-  // var ref = new Firebase("https://bl-weather-app.firebaseio.com/");
+    var ref = new Firebase("https://bl-weather-app.firebaseio.com/");
 
   return {
     initialSearch: function(){
