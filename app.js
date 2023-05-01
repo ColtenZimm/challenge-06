@@ -1,15 +1,22 @@
 const form = document.querySelector('form');
 const weatherData = document.querySelector('#weather-data');
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit'), (event) => {
   event.preventDefault();
-  
+
+const button = document.querySelector('button');
+
+button.addEventListener('click', (event) => {
+  // Do something when the button is clicked
+})
+};
+
   const city = document.querySelector('#city').value;
   const country = document.querySelector('#country').value;
   const apiKey = '19d898a9280e66dbe17ab3e90156196a';
   
   // Fetch weather data from OpenWeatherMap API
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${3ea468f4a2b9f36779b8a9e065b68283})
+  fetch();'https://api.openweathermap.org/data/2.5/weather?q=${city}, ${country}, ${3ea468f4a2b9f36779b8a9e065b68283};'
 
     .then(response => response.json())
     .then(data => {
@@ -23,4 +30,4 @@ form.addEventListener('submit', (event) => {
       console.error('Error fetching weather data:', error);
       weatherData.innerHTML = `<p>Error: ${error.message}</p>`;
     });
-});
+
